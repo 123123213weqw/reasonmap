@@ -119,13 +119,13 @@ def main():
     p.add_argument('--workers', type=int, choices=[1, 2], default=1)
     p.add_argument('--retry-failed', type=Path, help='Recheck failed cases only; preserves original attempts in the report')
     args = p.parse_args()
-    data = json.loads((ROOT / 'data/catalog.json').read_text())
+    data = json.loads((ROOT / 'data/catalog.json').read_text(encoding='utf-8'))
     selected = cases(data, args.family, args.base_url)
     if not selected:
         p.error('Use an exact official base URL from the catalog')
     previous = None
     if args.retry_failed:
-        previous = json.loads(args.retry_failed.read_text())
+        previous = json.loads(args.retry_failed.read_text(encoding='utf-8'))
         if previous.get('family') != args.family or previous.get('base_url') != args.base_url or previous.get('catalog_version') != data['version']:
             p.error('Retry evidence must match this family, exact endpoint and catalog version')
         failed = {(r['protocol'], r['model'], r['effort']) for r in previous['cases']
@@ -168,7 +168,7 @@ def main():
                       and r['reasoning_toggle_observation'] != 'fail' for r in rows) else 'fail',
                   'quality_ranking_verified': False}
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'status': report['status'], 'cases': len(report['cases']),
                       'acceptance_passed': sum(r['request_acceptance'] == 'pass' for r in report['cases'])}))
     return 0 if report['status'] == 'pass' else 1
