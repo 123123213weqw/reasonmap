@@ -59,7 +59,8 @@ python3 scripts/live_acceptance.py --family deepseek \
 
 Supply a key via protected stdin (disable terminal echo) or `CATALOG_API_KEY`,
 never a command-line argument. For BigModel use `--family glm` and its official
-base URL. Output contains counters/statuses, no API key or response bodies.
+base URL. Output contains counters/statuses, no API key or response bodies. Automatic
+HTTP redirects are disabled: credentials never follow a redirected request.
 `--retry-failed /tmp/catalog-live.json` checks only failed cases and preserves
 prior attempts. Do not put credentials in shell history or commit them.
 

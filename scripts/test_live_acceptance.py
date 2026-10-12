@@ -81,5 +81,31 @@ class RunnerTests(unittest.TestCase):
         finally:
             live.request = old
 
+
+    def test_live_request_does_not_follow_credential_bearing_redirects(self):
+        from http.server import BaseHTTPRequestHandler, HTTPServer
+        from threading import Thread
+        paths = []
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                paths.append(self.path)
+                self.send_response(302 if self.path == '/start' else 200)
+                self.send_header('Location', '/leak')
+                self.end_headers()
+                self.wfile.write(b'{}')
+            def log_message(self, *args):
+                pass
+        server = HTTPServer(('127.0.0.1', 0), Handler)
+        thread = Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            status, _ = live.request('http://127.0.0.1:' + str(server.server_port), '/start', 'fake-not-a-key')
+            self.assertEqual(status, 302)
+            self.assertEqual(paths, ['/start'], 'Authorization must not follow redirects')
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
+
 if __name__ == '__main__':
     unittest.main()

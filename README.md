@@ -13,7 +13,7 @@ Until a crates.io release is published:
 
 ```toml
 [dependencies]
-xharness-model-catalog = { git = "https://github.com/123123213weqw/xharness-model-catalog", tag = "v0.1.0" }
+xharness-model-catalog = { git = "https://github.com/123123213weqw/xharness-model-catalog", tag = "v0.1.1" }
 ```
 
 ```rust

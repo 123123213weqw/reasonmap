@@ -20,6 +20,12 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 PROMPT = 'Compute 17*19. Reply with only the decimal number.'
 
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Even an official endpoint may redirect. Never forward its credential.
+        return None
+
+
 def cases(catalog, family, base):
     result = []
     for route in catalog['routes']:
@@ -41,7 +47,7 @@ def request(base, path, key, payload=None):
     req = urllib.request.Request(base + path, data=data, headers={
         'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
     try:
-        with urllib.request.urlopen(req, timeout=60) as response:
+        with urllib.request.build_opener(NoRedirect()).open(req, timeout=60) as response:
             return response.status, json.load(response)
     except urllib.error.HTTPError as error:
         # Never retain free-form error text/headers; a numeric provider code can
