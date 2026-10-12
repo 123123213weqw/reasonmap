@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: catalog-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  rust:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all -- --check
+      - run: cargo test --locked
+      - run: cargo clippy --locked --all-targets -- -D warnings
+      - name: Verify standalone package
+        if: runner.os == 'Linux'
+        run: cargo package --locked --allow-dirty
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline live-runner regression (never uses secrets)
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Upload verified package
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v7
+        with:
+          name: xharness-model-catalog
+          path: target/package/xharness-model-catalog-*.crate

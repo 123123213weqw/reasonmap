@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "family": "glm",
+  "catalog_version": "2026-10-12.2",
+  "checked_at": "2026-10-12T12:01:49.251380+00:00",
+  "base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "models_http_status": 200,
+  "models": [
+    {
+      "id": "glm-4.7",
+      "name": null,
+      "effort": null
+    },
+    {
+      "id": "glm-5",
+      "name": null,
+      "effort": null
+    },
+    {
+      "id": "glm-5.1",
+      "name": null,
+      "effort": null
+    },
+    {
+      "id": "glm-5.2",
+      "name": null,
+      "effort": null
+    },
+    {
+      "id": "glm-5.3",
+      "name": null,
+      "effort": null
+    },
+    {
+      "id": "glm-5.3-flash",
+      "name": null,
+      "effort": null
+    }
+  ],
+  "limits": {
+    "max_output_tokens_per_request": 2048,
+    "max_workers": 1
+  },
+  "cases": [
+    {
+      "protocol": "openai-completions",
+      "model": "glm-4.7",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 4389,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": 0,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 18,
+        "total_tokens": 21
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-4.7",
+      "effort": "on",
+      "http_status": 200,
+      "elapsed_ms": 7171,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 111,
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 18,
+        "total_tokens": 132
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-4.7",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 7832,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 117,
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 18,
+        "total_tokens": 138
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-4.7-flash",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 1216,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": 0,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 18,
+        "total_tokens": 21
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-4.7-flash",
+      "effort": "on",
+      "http_status": 200,
+      "elapsed_ms": 2856,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 319,
+      "usage": {
+        "completion_tokens": 323,
+        "prompt_tokens": 18,
+        "total_tokens": 341
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-4.7-flash",
+      "effort": "catalog-default",
+      "http_status": 429,
+      "elapsed_ms": 221,
+      "numeric_error_code": "1305",
+      "request_acceptance": "fail",
+      "reasoning_toggle_observation": "not-observable",
+      "prior_attempts": [
+        {
+          "protocol": "openai-completions",
+          "model": "glm-4.7-flash",
+          "effort": "catalog-default",
+          "http_status": 429,
+          "elapsed_ms": 288,
+          "request_acceptance": "fail",
+          "reasoning_toggle_observation": "not-observable"
+        },
+        {
+          "protocol": "openai-completions",
+          "model": "glm-4.7-flash",
+          "effort": "catalog-default",
+          "http_status": 429,
+          "elapsed_ms": 168,
+          "request_acceptance": "fail",
+          "reasoning_toggle_observation": "not-observable"
+        }
+      ]
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 858,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": null,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 19,
+        "total_tokens": 21
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5",
+      "effort": "on",
+      "http_status": 200,
+      "elapsed_ms": 3650,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 167,
+      "usage": {
+        "completion_tokens": 170,
+        "prompt_tokens": 25,
+        "total_tokens": 195
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 2139,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 70,
+      "usage": {
+        "completion_tokens": 73,
+        "prompt_tokens": 25,
+        "total_tokens": 98
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.1",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 2771,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": 0,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 18,
+        "total_tokens": 21
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.1",
+      "effort": "on",
+      "http_status": 200,
+      "elapsed_ms": 6863,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 114,
+      "usage": {
+        "completion_tokens": 117,
+        "prompt_tokens": 18,
+        "total_tokens": 135
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.1",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 3925,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 61,
+      "usage": {
+        "completion_tokens": 64,
+        "prompt_tokens": 18,
+        "total_tokens": 82
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.2",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 1645,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": 0,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 19,
+        "total_tokens": 21
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.2",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 968,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 3,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 25,
+        "total_tokens": 30
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.2",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 2327,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 124,
+      "usage": {
+        "completion_tokens": 126,
+        "prompt_tokens": 25,
+        "total_tokens": 151
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.2",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 1902,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 96,
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 25,
+        "total_tokens": 123
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3",
+      "effort": "low",
+      "http_status": 200,
+      "elapsed_ms": 888,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 2,
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 25,
+        "total_tokens": 31
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 1461,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": 0,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 25,
+        "total_tokens": 29
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 1549,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 20,
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 25,
+        "total_tokens": 50
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 1075,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 20,
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 25,
+        "total_tokens": 50
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3-flash",
+      "effort": "low",
+      "http_status": 200,
+      "elapsed_ms": 1027,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 2,
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 25,
+        "total_tokens": 31
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3-flash",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 907,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 20,
+      "usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 25,
+        "total_tokens": 49
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3-flash",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 914,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 23,
+      "usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 25,
+        "total_tokens": 53
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "glm-5.3-flash",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 1244,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 36,
+      "usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 25,
+        "total_tokens": 65
+      }
+    }
+  ],
+  "status": "fail",
+  "quality_ranking_verified": false
+}

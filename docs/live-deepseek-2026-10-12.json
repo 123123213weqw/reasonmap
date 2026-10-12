@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "family": "deepseek",
+  "catalog_version": "2026-10-12.2",
+  "checked_at": "2026-10-12T11:59:59.299250+00:00",
+  "base_url": "https://api.deepseek.com",
+  "models_http_status": 200,
+  "models": [
+    {
+      "id": "deepseek-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "effort": {
+        "supported_levels": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_level": "high"
+      }
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek-V4-Pro",
+      "effort": {
+        "supported_levels": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_level": "high"
+      }
+    }
+  ],
+  "limits": {
+    "max_output_tokens_per_request": 2048,
+    "max_workers": 1
+  },
+  "cases": [
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-flash",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 888,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": null,
+      "usage": {
+        "prompt_tokens": 17,
+        "completion_tokens": 1,
+        "total_tokens": 18
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-flash",
+      "effort": "low",
+      "http_status": 200,
+      "elapsed_ms": 1067,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 18,
+      "usage": {
+        "prompt_tokens": 43,
+        "completion_tokens": 20,
+        "total_tokens": 63
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-flash",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 700,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 19,
+      "usage": {
+        "prompt_tokens": 43,
+        "completion_tokens": 21,
+        "total_tokens": 64
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-flash",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 840,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 19,
+      "usage": {
+        "prompt_tokens": 43,
+        "completion_tokens": 21,
+        "total_tokens": 64
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-flash",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 952,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 18,
+      "usage": {
+        "prompt_tokens": 43,
+        "completion_tokens": 20,
+        "total_tokens": 63
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-pro",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 1259,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "not-observable",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": false,
+      "reasoning_tokens": null,
+      "usage": {
+        "prompt_tokens": 17,
+        "completion_tokens": 1,
+        "total_tokens": 18
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-pro",
+      "effort": "low",
+      "http_status": 200,
+      "elapsed_ms": 1679,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 27,
+      "usage": {
+        "prompt_tokens": 17,
+        "completion_tokens": 29,
+        "total_tokens": 46
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-pro",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 1422,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 28,
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 30,
+        "total_tokens": 126
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-pro",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 1771,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 49,
+      "usage": {
+        "prompt_tokens": 109,
+        "completion_tokens": 51,
+        "total_tokens": 160
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-pro",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 1159,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 32,
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 34,
+        "total_tokens": 130
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-flash",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 598,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 18,
+      "usage": {
+        "prompt_tokens": 43,
+        "completion_tokens": 20,
+        "total_tokens": 63
+      }
+    },
+    {
+      "protocol": "openai-completions",
+      "model": "deepseek-v4-flash-vision-exp",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 862,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 18,
+      "usage": {
+        "prompt_tokens": 43,
+        "completion_tokens": 20,
+        "total_tokens": 63
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-flash",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 884,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": true,
+      "reasoning_tokens": 0,
+      "usage": {
+        "input_tokens": 17,
+        "output_tokens": 1,
+        "total_tokens": 18
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-flash",
+      "effort": "low",
+      "http_status": 200,
+      "elapsed_ms": 825,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 19,
+      "usage": {
+        "input_tokens": 43,
+        "output_tokens": 21,
+        "total_tokens": 64
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-flash",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 1164,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 18,
+      "usage": {
+        "input_tokens": 43,
+        "output_tokens": 20,
+        "total_tokens": 63
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-flash",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 734,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 20,
+      "usage": {
+        "input_tokens": 43,
+        "output_tokens": 22,
+        "total_tokens": 65
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-flash",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 710,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 21,
+      "usage": {
+        "input_tokens": 43,
+        "output_tokens": 23,
+        "total_tokens": 66
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-pro",
+      "effort": "off",
+      "http_status": 200,
+      "elapsed_ms": 1025,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": false,
+      "reasoning_observable": true,
+      "reasoning_tokens": 0,
+      "usage": {
+        "input_tokens": 17,
+        "output_tokens": 1,
+        "total_tokens": 18
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-pro",
+      "effort": "low",
+      "http_status": 200,
+      "elapsed_ms": 1262,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 14,
+      "usage": {
+        "input_tokens": 17,
+        "output_tokens": 16,
+        "total_tokens": 33
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-pro",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 1525,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 29,
+      "usage": {
+        "input_tokens": 96,
+        "output_tokens": 31,
+        "total_tokens": 127
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-pro",
+      "effort": "max",
+      "http_status": 200,
+      "elapsed_ms": 1308,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 23,
+      "usage": {
+        "input_tokens": 109,
+        "output_tokens": 25,
+        "total_tokens": 134
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-pro",
+      "effort": "catalog-default",
+      "http_status": 200,
+      "elapsed_ms": 1428,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 31,
+      "usage": {
+        "input_tokens": 96,
+        "output_tokens": 33,
+        "total_tokens": 129
+      }
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-flash",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 974,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 20,
+      "usage": {
+        "input_tokens": 43,
+        "output_tokens": 22,
+        "total_tokens": 65
+      },
+      "prior_attempts": [
+        {
+          "protocol": "openai-responses",
+          "model": "deepseek-v4-flash",
+          "effort": "high",
+          "http_status": null,
+          "elapsed_ms": 5013,
+          "request_acceptance": "fail",
+          "reasoning_toggle_observation": "not-observable"
+        }
+      ]
+    },
+    {
+      "protocol": "openai-responses",
+      "model": "deepseek-v4-flash-vision-exp",
+      "effort": "high",
+      "http_status": 200,
+      "elapsed_ms": 773,
+      "request_acceptance": "pass",
+      "reasoning_toggle_observation": "pass",
+      "answer_correct": true,
+      "completed": true,
+      "reasoning_observed": true,
+      "reasoning_observable": true,
+      "reasoning_tokens": 18,
+      "usage": {
+        "input_tokens": 43,
+        "output_tokens": 20,
+        "total_tokens": 63
+      },
+      "prior_attempts": [
+        {
+          "protocol": "openai-responses",
+          "model": "deepseek-v4-flash-vision-exp",
+          "effort": "high",
+          "http_status": null,
+          "elapsed_ms": 5011,
+          "request_acceptance": "fail",
+          "reasoning_toggle_observation": "not-observable"
+        }
+      ]
+    }
+  ],
+  "status": "pass",
+  "quality_ranking_verified": false
+}
