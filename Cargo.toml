@@ -6,7 +6,7 @@ license = "Apache-2.0"
 repository = "https://github.com/123123213weqw/xharness-model-catalog"
 description = "Offline, documented model reasoning controls and protocol-specific request mappings"
 readme = "README.md"
-include = ["src/**", "data/**", "tests/**", "README.md", "LICENSE", "Cargo.toml"]
+include = ["src/**", "data/**", "tests/**", "docs/**", "scripts/*.py", "CONTRIBUTING.md", "SECURITY.md", "AGENTS.md", "README.md", "LICENSE", "Cargo.toml"]
 keywords = ["llm", "reasoning", "deepseek", "glm", "catalog"]
 categories = ["config"]
 
