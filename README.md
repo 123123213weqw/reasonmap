@@ -13,7 +13,7 @@ Until a crates.io release is published:
 
 ```toml
 [dependencies]
-reasonmap = { git = "https://github.com/123123213weqw/reasonmap", tag = "v0.2.0" }
+reasonmap = { git = "https://github.com/123123213weqw/reasonmap", tag = "v0.3.0" }
 ```
 
 ```rust
@@ -39,9 +39,37 @@ application configuration must take priority over catalog-derived defaults.
 | `glm-4.7`, `glm-4.7-flash`, `glm-5`, `glm-5.1` | off / on | on |
 | `glm-5.2` | off / high / max | max |
 | `glm-5.3`, `glm-5.3-flash` | low / high / max (no off) | max |
+| `gpt-6-sol`, `gpt-6-luna`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna` | off / low / medium / high / xhigh / max | medium |
+| `gpt-6.1-sol` | low / medium / high / xhigh / max | medium |
+| `gpt-6-astra` | low / medium / high / xhigh / max | not documented |
+| `gpt-5.5`, `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.4-nano` | off / low / medium / high / xhigh | medium / none |
+| `gpt-5.1`, `gpt-5` | off / low / medium / high (5 adds minimal) | none / not documented |
+| `gpt-5.5-pro` (Responses only) | medium / high / xhigh | high |
+| `gemini-3.8-flash`, `gemini-3.1-pro-preview` | low / medium / high | medium / high |
+| `gemini-3.6-flash`, `gemini-3.5-flash-lite`, `gemini-3-flash-preview` | minimal / low / medium / high | medium / minimal / high |
+| `gemini-2.5-flash`, `gemini-2.5-flash-lite` | off / low / medium / high | dynamic / off |
+| `gemini-2.5-pro` | low / medium / high (no off) | dynamic |
+| `grok-4.7`, `grok-4.6` | low / medium / high / xhigh (no off) | high |
+| `grok-4.5` | low / medium / high (no off) | high |
+| `qwen3.8-max`, `qwen3.8-flash` | off / low / medium / xhigh | xhigh |
+| `qwen3.7-max`, `qwen3.7-plus`, `qwen3.7-flash` | off / on | on |
+| `qwen-plus`, `qwen-flash` | off / on | off |
+| `kimi-k2.6` | off / on | on |
+| `kimi-k3` | low / high / max (no off) | max |
+| `claude-fable-5-1`, `claude-sonnet-5-5` | low / medium / high / xhigh / max (no off) | high |
+| `claude-opus-5-5`, `claude-haiku-5-5` | low / medium / high / xhigh / max (no off) | medium |
 
-DeepSeek has separate Chat Completions and Responses patches. GLM initially
-covers documented Chat Completions endpoints at BigModel and Z.ai.
+DeepSeek, OpenAI and Kimi have separate Chat Completions and Responses patches.
+GLM, Gemini, xAI and Qwen cover documented Chat Completions endpoints. Anthropic
+is matched through its **native Messages protocol** (`anthropic-messages`): its
+OpenAI compatibility layer ignores `reasoning_effort`, so effort control is
+expressed as `thinking: {type: "adaptive"}` plus `output_config: {effort}`.
+The 2026-10-13 OpenAI, Gemini, xAI, Qwen, Kimi and Anthropic additions are
+**documentation-backed only**, not live-request tested; DeepSeek and GLM remain
+the live-accepted families. Not recorded (insufficient or non-discrete
+documentation): OpenAI o-series effort subsets, continuous budget parameters
+(`budget_tokens`, `thinking_budget`), Vertex per-project endpoints, and
+models whose reasoning cannot be controlled (e.g. `kimi-k2.7-code`).
 
 `deepseek-flash` currently denotes **DeepSeek-V4.1-Flash**. Legacy aliases
 `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` are recorded separately;

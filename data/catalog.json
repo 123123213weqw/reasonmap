@@ -1,6 +1,6 @@
 {
-  "version": "2026-10-12.2",
-  "checked_on": "2026-10-12",
+  "version": "2026-10-13.1",
+  "checked_on": "2026-10-13",
   "profiles": {
     "deepseek-chat": {
       "default_effort": "high",
@@ -178,6 +178,1295 @@
           }
         }
       ]
+    },
+    "openai-chat-none-max": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning_effort": "none"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning_effort": "max"
+          }
+        }
+      ]
+    },
+    "openai-responses-none-max": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning": {
+              "effort": "none"
+            }
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
+    },
+    "openai-chat-6-1-sol": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning_effort": "max"
+          }
+        }
+      ]
+    },
+    "openai-responses-6-1-sol": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
+    },
+    "openai-chat-6-astra": {
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning_effort": "max"
+          }
+        }
+      ]
+    },
+    "openai-responses-6-astra": {
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
+    },
+    "openai-chat-5-5": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning_effort": "none"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        }
+      ]
+    },
+    "openai-responses-5-5": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning": {
+              "effort": "none"
+            }
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "xhigh"
+            }
+          }
+        }
+      ]
+    },
+    "openai-chat-5-4": {
+      "default_effort": "off",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning_effort": "none"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        }
+      ]
+    },
+    "openai-responses-5-4": {
+      "default_effort": "off",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning": {
+              "effort": "none"
+            }
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "xhigh"
+            }
+          }
+        }
+      ]
+    },
+    "openai-chat-5-1": {
+      "default_effort": "off",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning_effort": "none"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "openai-responses-5-1": {
+      "default_effort": "off",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning": {
+              "effort": "none"
+            }
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        }
+      ]
+    },
+    "openai-chat-5": {
+      "efforts": [
+        {
+          "id": "minimal",
+          "name": "极低",
+          "request_patch": {
+            "reasoning_effort": "minimal"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "openai-responses-5": {
+      "efforts": [
+        {
+          "id": "minimal",
+          "name": "极低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "minimal"
+            }
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        }
+      ]
+    },
+    "openai-responses-5-5-pro": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "xhigh"
+            }
+          }
+        }
+      ]
+    },
+    "gemini-3-8-flash": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-3-6-flash": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "minimal",
+          "name": "极低",
+          "request_patch": {
+            "reasoning_effort": "minimal"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-3-5-flash-lite": {
+      "default_effort": "minimal",
+      "efforts": [
+        {
+          "id": "minimal",
+          "name": "极低",
+          "request_patch": {
+            "reasoning_effort": "minimal"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-3-1-pro": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-3-flash-preview": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "minimal",
+          "name": "极低",
+          "request_patch": {
+            "reasoning_effort": "minimal"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-2-5-flash": {
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning_effort": "none"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-2-5-pro": {
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "gemini-2-5-flash-lite": {
+      "default_effort": "off",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "reasoning_effort": "none"
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "grok-chat-xhigh": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        }
+      ]
+    },
+    "grok-chat-4-5": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        }
+      ]
+    },
+    "qwen3-8-chat": {
+      "default_effort": "xhigh",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "enable_thinking": false
+          }
+        },
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "reasoning_effort": "medium"
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "reasoning_effort": "xhigh"
+          }
+        }
+      ]
+    },
+    "qwen-toggle-on": {
+      "default_effort": "on",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "enable_thinking": false
+          }
+        },
+        {
+          "id": "on",
+          "name": "开启",
+          "request_patch": {
+            "enable_thinking": true
+          }
+        }
+      ]
+    },
+    "qwen-toggle-off": {
+      "default_effort": "off",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "enable_thinking": false
+          }
+        },
+        {
+          "id": "on",
+          "name": "开启",
+          "request_patch": {
+            "enable_thinking": true
+          }
+        }
+      ]
+    },
+    "kimi-toggle": {
+      "default_effort": "on",
+      "efforts": [
+        {
+          "id": "off",
+          "name": "关闭",
+          "request_patch": {
+            "thinking": {
+              "type": "disabled"
+            }
+          }
+        },
+        {
+          "id": "on",
+          "name": "开启",
+          "request_patch": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        }
+      ]
+    },
+    "kimi-k3-chat": {
+      "default_effort": "max",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning_effort": "low"
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning_effort": "high"
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning_effort": "max"
+          }
+        }
+      ]
+    },
+    "kimi-k3-responses": {
+      "default_effort": "max",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "reasoning": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "reasoning": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
+    },
+    "claude-5-5-high": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
+    },
+    "claude-5-5-medium": {
+      "default_effort": "medium",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
+    },
+    "claude-fable-5-1": {
+      "default_effort": "high",
+      "efforts": [
+        {
+          "id": "low",
+          "name": "低",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "low"
+            }
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "medium"
+            }
+          }
+        },
+        {
+          "id": "high",
+          "name": "高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "high"
+            }
+          }
+        },
+        {
+          "id": "xhigh",
+          "name": "超高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        {
+          "id": "max",
+          "name": "最高",
+          "request_patch": {
+            "thinking": {
+              "type": "adaptive"
+            },
+            "output_config": {
+              "effort": "max"
+            }
+          }
+        }
+      ]
     }
   },
   "routes": [
@@ -283,6 +1572,616 @@
         "https://docs.z.ai/api-reference/llm/chat-completion",
         "https://docs.z.ai/guides/llm/glm-5.3"
       ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-6-sol",
+        "gpt-6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna"
+      ],
+      "profile": "openai-chat-none-max",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-6-sol",
+        "gpt-6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna"
+      ],
+      "profile": "openai-responses-none-max",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-6.1-sol"
+      ],
+      "profile": "openai-chat-6-1-sol",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-6.1-sol"
+      ],
+      "profile": "openai-responses-6-1-sol",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-6-astra"
+      ],
+      "profile": "openai-chat-6-astra",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-6-astra"
+      ],
+      "profile": "openai-responses-6-astra",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.5"
+      ],
+      "profile": "openai-chat-5-5",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.5"
+      ],
+      "profile": "openai-responses-5-5",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.4",
+        "gpt-5.4-mini",
+        "gpt-5.4-nano"
+      ],
+      "profile": "openai-chat-5-4",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.4",
+        "gpt-5.4-mini",
+        "gpt-5.4-nano"
+      ],
+      "profile": "openai-responses-5-4",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.1"
+      ],
+      "profile": "openai-chat-5-1",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.1"
+      ],
+      "profile": "openai-responses-5-1",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5"
+      ],
+      "profile": "openai-chat-5",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5"
+      ],
+      "profile": "openai-responses-5",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "openai",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.openai.com/v1"
+      ],
+      "models": [
+        "gpt-5.5-pro"
+      ],
+      "profile": "openai-responses-5-5-pro",
+      "sources": [
+        "https://developers.openai.com/api/reference/resources/chat",
+        "https://developers.openai.com/api/reference/resources/responses/methods/create",
+        "https://developers.openai.com/api/docs/guides/reasoning",
+        "https://developers.openai.com/api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-3.8-flash"
+      ],
+      "profile": "gemini-3-8-flash",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "profile": "gemini-3-6-flash",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-3.5-flash-lite"
+      ],
+      "profile": "gemini-3-5-flash-lite",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-3.1-pro-preview"
+      ],
+      "profile": "gemini-3-1-pro",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-3-flash-preview"
+      ],
+      "profile": "gemini-3-flash-preview",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-2.5-flash"
+      ],
+      "profile": "gemini-2-5-flash",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-2.5-pro"
+      ],
+      "profile": "gemini-2-5-pro",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "gemini",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai"
+      ],
+      "models": [
+        "gemini-2.5-flash-lite"
+      ],
+      "profile": "gemini-2-5-flash-lite",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/openai",
+        "https://ai.google.dev/gemini-api/docs/thinking",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "family": "grok",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.x.ai/v1"
+      ],
+      "models": [
+        "grok-4.7",
+        "grok-4.6"
+      ],
+      "profile": "grok-chat-xhigh",
+      "sources": [
+        "https://docs.x.ai/developers/model-capabilities/text/reasoning",
+        "https://docs.x.ai/developers/rest-api-reference/inference/chat-completions",
+        "https://docs.x.ai/developers/models"
+      ]
+    },
+    {
+      "family": "grok",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.x.ai/v1"
+      ],
+      "models": [
+        "grok-4.5"
+      ],
+      "profile": "grok-chat-4-5",
+      "sources": [
+        "https://docs.x.ai/developers/model-capabilities/text/reasoning",
+        "https://docs.x.ai/developers/rest-api-reference/inference/chat-completions",
+        "https://docs.x.ai/developers/models"
+      ]
+    },
+    {
+      "family": "qwen",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
+        "https://cn-hongkong.dashscope.aliyuncs.com/compatible-mode/v1"
+      ],
+      "models": [
+        "qwen3.8-max",
+        "qwen3.8-flash"
+      ],
+      "profile": "qwen3-8-chat",
+      "sources": [
+        "https://help.aliyun.com/zh/model-studio/deep-thinking",
+        "https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions",
+        "https://help.aliyun.com/zh/model-studio/text-generation-model",
+        "https://help.aliyun.com/zh/model-studio/base-url"
+      ]
+    },
+    {
+      "family": "qwen",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
+        "https://cn-hongkong.dashscope.aliyuncs.com/compatible-mode/v1"
+      ],
+      "models": [
+        "qwen3.7-max",
+        "qwen3.7-plus",
+        "qwen3.7-flash"
+      ],
+      "profile": "qwen-toggle-on",
+      "sources": [
+        "https://help.aliyun.com/zh/model-studio/deep-thinking",
+        "https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions",
+        "https://help.aliyun.com/zh/model-studio/text-generation-model",
+        "https://help.aliyun.com/zh/model-studio/base-url"
+      ]
+    },
+    {
+      "family": "qwen",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
+        "https://cn-hongkong.dashscope.aliyuncs.com/compatible-mode/v1"
+      ],
+      "models": [
+        "qwen-plus",
+        "qwen-flash"
+      ],
+      "profile": "qwen-toggle-off",
+      "sources": [
+        "https://help.aliyun.com/zh/model-studio/deep-thinking",
+        "https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions",
+        "https://help.aliyun.com/zh/model-studio/text-generation-model",
+        "https://help.aliyun.com/zh/model-studio/base-url"
+      ]
+    },
+    {
+      "family": "kimi",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.moonshot.cn",
+        "https://api.moonshot.cn/v1",
+        "https://api.moonshot.ai",
+        "https://api.moonshot.ai/v1"
+      ],
+      "models": [
+        "kimi-k2.6"
+      ],
+      "profile": "kimi-toggle",
+      "sources": [
+        "https://platform.kimi.com/docs/guide/use-thinking-models",
+        "https://platform.kimi.com/docs/guide/use-reasoning-effort",
+        "https://platform.kimi.com/docs/api/chat",
+        "https://platform.kimi.com/docs/api/responses",
+        "https://platform.kimi.com/docs/models"
+      ]
+    },
+    {
+      "family": "kimi",
+      "api": "openai-completions",
+      "base_urls": [
+        "https://api.moonshot.cn",
+        "https://api.moonshot.cn/v1",
+        "https://api.moonshot.ai",
+        "https://api.moonshot.ai/v1"
+      ],
+      "models": [
+        "kimi-k3"
+      ],
+      "profile": "kimi-k3-chat",
+      "sources": [
+        "https://platform.kimi.com/docs/guide/use-thinking-models",
+        "https://platform.kimi.com/docs/guide/use-reasoning-effort",
+        "https://platform.kimi.com/docs/api/chat",
+        "https://platform.kimi.com/docs/api/responses",
+        "https://platform.kimi.com/docs/models"
+      ]
+    },
+    {
+      "family": "kimi",
+      "api": "openai-responses",
+      "base_urls": [
+        "https://api.moonshot.cn",
+        "https://api.moonshot.cn/v1",
+        "https://api.moonshot.ai",
+        "https://api.moonshot.ai/v1"
+      ],
+      "models": [
+        "kimi-k3"
+      ],
+      "profile": "kimi-k3-responses",
+      "sources": [
+        "https://platform.kimi.com/docs/guide/use-thinking-models",
+        "https://platform.kimi.com/docs/guide/use-reasoning-effort",
+        "https://platform.kimi.com/docs/api/chat",
+        "https://platform.kimi.com/docs/api/responses",
+        "https://platform.kimi.com/docs/models"
+      ]
+    },
+    {
+      "family": "anthropic",
+      "api": "anthropic-messages",
+      "base_urls": [
+        "https://api.anthropic.com",
+        "https://api.anthropic.com/v1"
+      ],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "profile": "claude-5-5-high",
+      "sources": [
+        "https://platform.claude.com/docs/en/api/messages",
+        "https://platform.claude.com/docs/en/docs/build-with-claude/adaptive-thinking",
+        "https://platform.claude.com/docs/en/docs/build-with-claude/effort",
+        "https://platform.claude.com/docs/en/about-claude/models/overview"
+      ]
+    },
+    {
+      "family": "anthropic",
+      "api": "anthropic-messages",
+      "base_urls": [
+        "https://api.anthropic.com",
+        "https://api.anthropic.com/v1"
+      ],
+      "models": [
+        "claude-opus-5-5",
+        "claude-haiku-5-5"
+      ],
+      "profile": "claude-5-5-medium",
+      "sources": [
+        "https://platform.claude.com/docs/en/api/messages",
+        "https://platform.claude.com/docs/en/docs/build-with-claude/adaptive-thinking",
+        "https://platform.claude.com/docs/en/docs/build-with-claude/effort",
+        "https://platform.claude.com/docs/en/about-claude/models/overview"
+      ]
+    },
+    {
+      "family": "anthropic",
+      "api": "anthropic-messages",
+      "base_urls": [
+        "https://api.anthropic.com",
+        "https://api.anthropic.com/v1"
+      ],
+      "models": [
+        "claude-fable-5-1"
+      ],
+      "profile": "claude-fable-5-1",
+      "sources": [
+        "https://platform.claude.com/docs/en/api/messages",
+        "https://platform.claude.com/docs/en/docs/build-with-claude/adaptive-thinking",
+        "https://platform.claude.com/docs/en/docs/build-with-claude/effort",
+        "https://platform.claude.com/docs/en/about-claude/models/overview"
+      ]
     }
   ],
   "identities": {
@@ -350,6 +2249,234 @@
       "canonical_id": "glm-5.3-flash",
       "display_name": "GLM-5.3-FLASH",
       "snapshot_version": "glm-5.3-flash",
+      "legacy_alias": false
+    },
+    "gpt-6-sol": {
+      "canonical_id": "gpt-6-sol",
+      "display_name": "GPT-6 Sol",
+      "snapshot_version": "gpt-6-sol",
+      "legacy_alias": false
+    },
+    "gpt-6-luna": {
+      "canonical_id": "gpt-6-luna",
+      "display_name": "GPT-6 Luna",
+      "snapshot_version": "gpt-6-luna",
+      "legacy_alias": false
+    },
+    "gpt-5.6-sol": {
+      "canonical_id": "gpt-5.6-sol",
+      "display_name": "GPT-5.6 Sol",
+      "snapshot_version": "gpt-5.6-sol",
+      "legacy_alias": false
+    },
+    "gpt-5.6-terra": {
+      "canonical_id": "gpt-5.6-terra",
+      "display_name": "GPT-5.6-TERRA",
+      "snapshot_version": "gpt-5.6-terra",
+      "legacy_alias": false
+    },
+    "gpt-5.6-luna": {
+      "canonical_id": "gpt-5.6-luna",
+      "display_name": "GPT-5.6 Luna",
+      "snapshot_version": "gpt-5.6-luna",
+      "legacy_alias": false
+    },
+    "gpt-6.1-sol": {
+      "canonical_id": "gpt-6.1-sol",
+      "display_name": "GPT-6.1 Sol",
+      "snapshot_version": "gpt-6.1-sol",
+      "legacy_alias": false
+    },
+    "gpt-6-astra": {
+      "canonical_id": "gpt-6-astra",
+      "display_name": "GPT-6 Astra",
+      "snapshot_version": "gpt-6-astra",
+      "legacy_alias": false
+    },
+    "gpt-5.5": {
+      "canonical_id": "gpt-5.5",
+      "display_name": "GPT-5.5",
+      "snapshot_version": "gpt-5.5",
+      "legacy_alias": false
+    },
+    "gpt-5.4": {
+      "canonical_id": "gpt-5.4",
+      "display_name": "GPT-5.4",
+      "snapshot_version": "gpt-5.4",
+      "legacy_alias": false
+    },
+    "gpt-5.4-mini": {
+      "canonical_id": "gpt-5.4-mini",
+      "display_name": "GPT-5.4 Mini",
+      "snapshot_version": "gpt-5.4-mini",
+      "legacy_alias": false
+    },
+    "gpt-5.4-nano": {
+      "canonical_id": "gpt-5.4-nano",
+      "display_name": "GPT-5.4 nano",
+      "snapshot_version": "gpt-5.4-nano",
+      "legacy_alias": false
+    },
+    "gpt-5.1": {
+      "canonical_id": "gpt-5.1",
+      "display_name": "GPT-5.1",
+      "snapshot_version": "gpt-5.1",
+      "legacy_alias": false
+    },
+    "gpt-5": {
+      "canonical_id": "gpt-5",
+      "display_name": "GPT-5",
+      "snapshot_version": "gpt-5",
+      "legacy_alias": false
+    },
+    "gpt-5.5-pro": {
+      "canonical_id": "gpt-5.5-pro",
+      "display_name": "GPT-5.5 Pro",
+      "snapshot_version": "gpt-5.5-pro",
+      "legacy_alias": false
+    },
+    "gemini-3.8-flash": {
+      "canonical_id": "gemini-3.8-flash",
+      "display_name": "Gemini 3.8 Flash",
+      "snapshot_version": "gemini-3.8-flash",
+      "legacy_alias": false
+    },
+    "gemini-3.6-flash": {
+      "canonical_id": "gemini-3.6-flash",
+      "display_name": "Gemini 3.6 Flash",
+      "snapshot_version": "gemini-3.6-flash",
+      "legacy_alias": false
+    },
+    "gemini-3.5-flash-lite": {
+      "canonical_id": "gemini-3.5-flash-lite",
+      "display_name": "Gemini 3.5 Flash Lite",
+      "snapshot_version": "gemini-3.5-flash-lite",
+      "legacy_alias": false
+    },
+    "gemini-3.1-pro-preview": {
+      "canonical_id": "gemini-3.1-pro-preview",
+      "display_name": "Gemini 3.1 Pro Preview",
+      "snapshot_version": "gemini-3.1-pro-preview",
+      "legacy_alias": false
+    },
+    "gemini-3-flash-preview": {
+      "canonical_id": "gemini-3-flash-preview",
+      "display_name": "Gemini 3 Flash Preview",
+      "snapshot_version": "gemini-3-flash-preview",
+      "legacy_alias": false
+    },
+    "gemini-2.5-flash": {
+      "canonical_id": "gemini-2.5-flash",
+      "display_name": "Gemini 2.5 Flash",
+      "snapshot_version": "gemini-2.5-flash",
+      "legacy_alias": false
+    },
+    "gemini-2.5-pro": {
+      "canonical_id": "gemini-2.5-pro",
+      "display_name": "Gemini 2.5 Pro",
+      "snapshot_version": "gemini-2.5-pro",
+      "legacy_alias": false
+    },
+    "gemini-2.5-flash-lite": {
+      "canonical_id": "gemini-2.5-flash-lite",
+      "display_name": "Gemini 2.5 Flash Lite",
+      "snapshot_version": "gemini-2.5-flash-lite",
+      "legacy_alias": false
+    },
+    "grok-4.7": {
+      "canonical_id": "grok-4.7",
+      "display_name": "Grok 4.7",
+      "snapshot_version": "grok-4.7",
+      "legacy_alias": false
+    },
+    "grok-4.6": {
+      "canonical_id": "grok-4.6",
+      "display_name": "Grok 4.6",
+      "snapshot_version": "grok-4.6",
+      "legacy_alias": false
+    },
+    "grok-4.5": {
+      "canonical_id": "grok-4.5",
+      "display_name": "Grok 4.5",
+      "snapshot_version": "grok-4.5",
+      "legacy_alias": false
+    },
+    "qwen3.8-max": {
+      "canonical_id": "qwen3.8-max",
+      "display_name": "Qwen3.8-Max",
+      "snapshot_version": "qwen3.8-max",
+      "legacy_alias": false
+    },
+    "qwen3.8-flash": {
+      "canonical_id": "qwen3.8-flash",
+      "display_name": "Qwen3.8-Flash",
+      "snapshot_version": "qwen3.8-flash",
+      "legacy_alias": false
+    },
+    "qwen3.7-max": {
+      "canonical_id": "qwen3.7-max",
+      "display_name": "Qwen3.7-Max",
+      "snapshot_version": "qwen3.7-max",
+      "legacy_alias": false
+    },
+    "qwen3.7-plus": {
+      "canonical_id": "qwen3.7-plus",
+      "display_name": "Qwen3.7-Plus",
+      "snapshot_version": "qwen3.7-plus",
+      "legacy_alias": false
+    },
+    "qwen3.7-flash": {
+      "canonical_id": "qwen3.7-flash",
+      "display_name": "Qwen3.7-Flash",
+      "snapshot_version": "qwen3.7-flash",
+      "legacy_alias": false
+    },
+    "qwen-plus": {
+      "canonical_id": "qwen-plus",
+      "display_name": "Qwen Plus",
+      "snapshot_version": "qwen-plus",
+      "legacy_alias": false
+    },
+    "qwen-flash": {
+      "canonical_id": "qwen-flash",
+      "display_name": "Qwen Flash",
+      "snapshot_version": "qwen-flash",
+      "legacy_alias": false
+    },
+    "kimi-k2.6": {
+      "canonical_id": "kimi-k2.6",
+      "display_name": "Kimi K2.6",
+      "snapshot_version": "kimi-k2.6",
+      "legacy_alias": false
+    },
+    "kimi-k3": {
+      "canonical_id": "kimi-k3",
+      "display_name": "Kimi K3",
+      "snapshot_version": "kimi-k3",
+      "legacy_alias": false
+    },
+    "claude-sonnet-5-5": {
+      "canonical_id": "claude-sonnet-5-5",
+      "display_name": "Claude Sonnet 5.5",
+      "snapshot_version": "claude-sonnet-5-5",
+      "legacy_alias": false
+    },
+    "claude-opus-5-5": {
+      "canonical_id": "claude-opus-5-5",
+      "display_name": "Claude Opus 5.5",
+      "snapshot_version": "claude-opus-5-5",
+      "legacy_alias": false
+    },
+    "claude-haiku-5-5": {
+      "canonical_id": "claude-haiku-5-5",
+      "display_name": "Claude Haiku 5.5",
+      "snapshot_version": "claude-haiku-5-5",
+      "legacy_alias": false
+    },
+    "claude-fable-5-1": {
+      "canonical_id": "claude-fable-5-1",
+      "display_name": "Claude Fable 5.1",
+      "snapshot_version": "claude-fable-5-1",
       "legacy_alias": false
     }
   }

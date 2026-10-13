@@ -162,6 +162,101 @@ fn glm_model_specific_levels_and_forced_reasoning_are_not_universal_low_medium_h
     }
 }
 #[test]
+fn documented_families_use_their_documented_control_fields() {
+    let catalog = bundled().unwrap();
+    let astra = catalog
+        .resolve(
+            "https://api.openai.com/v1",
+            Protocol::ChatCompletions,
+            "gpt-6-astra",
+        )
+        .unwrap();
+    assert!(astra.profile.request_patch(Some("off")).is_err());
+    assert_eq!(
+        astra.profile.request_patch(Some("high")).unwrap().unwrap()["reasoning_effort"],
+        "high"
+    );
+    assert!(astra.profile.default_effort.is_none());
+    let sol = catalog
+        .resolve(
+            "https://api.openai.com/v1",
+            Protocol::Responses,
+            "gpt-6.1-sol",
+        )
+        .unwrap();
+    assert!(sol.profile.request_patch(Some("off")).is_err());
+    assert_eq!(
+        sol.profile.request_patch(Some("low")).unwrap().unwrap()["reasoning"],
+        json!({"effort": "low"})
+    );
+    let g55 = catalog
+        .resolve("https://api.openai.com/v1", Protocol::Responses, "gpt-5.5")
+        .unwrap();
+    assert_eq!(
+        g55.profile.request_patch(Some("off")).unwrap().unwrap()["reasoning"],
+        json!({"effort": "none"})
+    );
+    let sonnet = catalog
+        .resolve(
+            "https://api.anthropic.com",
+            Protocol::AnthropicMessages,
+            "claude-sonnet-5-5",
+        )
+        .unwrap();
+    let sonnet_patch = sonnet
+        .profile
+        .request_patch(Some("xhigh"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(sonnet_patch["thinking"], json!({"type": "adaptive"}));
+    assert_eq!(sonnet_patch["output_config"], json!({"effort": "xhigh"}));
+    let gemini = catalog
+        .resolve(
+            "https://generativelanguage.googleapis.com/v1beta/openai",
+            Protocol::ChatCompletions,
+            "gemini-3.8-flash",
+        )
+        .unwrap();
+    assert!(gemini.profile.request_patch(Some("minimal")).is_err());
+    assert_eq!(
+        gemini.profile.request_patch(Some("low")).unwrap().unwrap()["reasoning_effort"],
+        "low"
+    );
+    let grok = catalog
+        .resolve("https://api.x.ai/v1", Protocol::ChatCompletions, "grok-4.7")
+        .unwrap();
+    assert!(grok.profile.request_patch(Some("off")).is_err());
+    let qwen = catalog
+        .resolve(
+            "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            Protocol::ChatCompletions,
+            "qwen-plus",
+        )
+        .unwrap();
+    assert_eq!(
+        qwen.profile.request_patch(None).unwrap().unwrap()["enable_thinking"],
+        false
+    );
+    let k3 = catalog
+        .resolve("https://api.moonshot.ai/v1", Protocol::Responses, "kimi-k3")
+        .unwrap();
+    assert_eq!(
+        k3.profile.request_patch(Some("low")).unwrap().unwrap()["reasoning"],
+        json!({"effort": "low"})
+    );
+    assert!(k3.profile.request_patch(Some("off")).is_err());
+    assert!(
+        catalog
+            .resolve(
+                "https://api.anthropic.com",
+                Protocol::ChatCompletions,
+                "claude-sonnet-5-5"
+            )
+            .is_none(),
+        "anthropic control is native-protocol only"
+    );
+}
+#[test]
 fn malformed_duplicate_or_unproven_catalog_entries_are_rejected() {
     for input in [
         altered(|v| v["profiles"]["glm-5.3"]["default_effort"] = json!("off")),
@@ -174,7 +269,7 @@ fn malformed_duplicate_or_unproven_catalog_entries_are_rejected() {
         altered(|v| v["routes"][0]["profile"] = json!("missing")),
         altered(|v| v["routes"][0]["models"] = json!(["not-declared"])),
         altered(|v| v["routes"][0]["base_urls"] = json!(["http://api.deepseek.com"])),
-        altered(|v| v["routes"][0]["api"] = json!("anthropic-messages")),
+        altered(|v| v["routes"][0]["api"] = json!("google-gemini")),
         altered(|v| {
             let route = v["routes"][0].clone();
             v["routes"].as_array_mut().unwrap().push(route)

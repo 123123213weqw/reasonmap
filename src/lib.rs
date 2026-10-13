@@ -27,6 +27,8 @@ pub enum Protocol {
     ChatCompletions,
     #[serde(rename = "openai-responses")]
     Responses,
+    #[serde(rename = "anthropic-messages")]
+    AnthropicMessages,
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
@@ -169,6 +171,8 @@ impl Catalog {
                         "reasoning_effort",
                         "reasoning",
                         "chat_template_kwargs",
+                        "output_config",
+                        "enable_thinking",
                     ]
                     .contains(&k.as_str())
                 }) {

@@ -1,4 +1,37 @@
-# Acceptance — 2026-10-12
+# Acceptance — 2026-10-13
+
+## 2026-10-13 documentation expansion (catalog version 2026-10-13.1)
+
+Six new families were added from official documentation only: OpenAI, Gemini
+(OpenAI-compatible endpoint), xAI Grok, Qwen via DashScope compatible mode,
+Kimi (Moonshot), and Anthropic via its native Messages protocol. These entries
+are **grade 1 (documented) only**: no live request acceptance was performed for
+them in this release, and `scripts/live_acceptance.py` still accepts only the
+`deepseek` and `glm` families. DeepSeek and GLM results below remain the only
+live-accepted families.
+
+Deliberately not recorded, with reasons:
+
+- **OpenAI o-series, `gpt-5.6-cyber`, `gpt-5-mini`/`nano`, codex models**:
+  current model pages no longer enumerate per-model effort subsets.
+- **Anthropic `budget_tokens`, Qwen `thinking_budget`**: continuous integer
+  parameters, not discrete levels; the catalog only expresses discrete efforts.
+- **Anthropic OpenAI compatibility layer** (`https://api.anthropic.com/v1/`):
+  documented to ignore `reasoning_effort`; effort control is not documented
+  there, so no openai-* route is declared for Anthropic.
+- **Vertex AI OpenAI-compatible endpoint**: the base URL embeds per-project
+  `{project}/{location}` path segments that cannot be exact-matched.
+- **`kimi-k2.7-code` / `kimi-k2.7-code-highspeed`**: reasoning is always on and
+  `thinking.type: "disabled"` is rejected; nothing to control.
+- **`grok-4.20-multi-agent`**: `reasoning_effort` selects the agent count
+  (4 or 16), not reasoning depth.
+- **`gemini-3-pro-preview`, `gemini-3.7-flash`**: deprecated upstream.
+- **DashScope workspace-specific hostnames** (`{WorkspaceId}...maas.aliyuncs.com`):
+  not fixed endpoints; only the four public regional bases are recorded.
+- **Anthropic `off`**: `thinking.type: "disabled"` availability is model- and
+  effort-dependent on current models, so no off effort is declared.
+
+---
 
 This release is an offline reasoning catalog, not a certification of model quality.
 Evidence is intentionally separated into four grades:
