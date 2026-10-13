@@ -40,5 +40,5 @@ jobs:
         if: runner.os == 'Linux'
         uses: actions/upload-artifact@v7
         with:
-          name: xharness-model-catalog
-          path: target/package/xharness-model-catalog-*.crate
+          name: reasonmap
+          path: target/package/reasonmap-*.crate

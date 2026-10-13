@@ -1,4 +1,4 @@
-# xharness-model-catalog
+# reasonmap
 
 An **offline, documentation-backed reasoning compatibility catalog** for Rust
 and language-neutral JSON consumers. Apache-2.0.
@@ -13,11 +13,11 @@ Until a crates.io release is published:
 
 ```toml
 [dependencies]
-xharness-model-catalog = { git = "https://github.com/123123213weqw/xharness-model-catalog", tag = "v0.1.1" }
+reasonmap = { git = "https://github.com/123123213weqw/reasonmap", tag = "v0.2.0" }
 ```
 
 ```rust
-use xharness_model_catalog::{bundled, Protocol};
+use reasonmap::{bundled, Protocol};
 let catalog = bundled().expect("valid bundled catalog");
 let found = catalog.resolve("https://api.deepseek.com", Protocol::ChatCompletions,
                             "deepseek-flash").expect("documented route");

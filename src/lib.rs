@@ -3,7 +3,7 @@
 //! All bundled data is documentation-backed, not a claim of live-provider tests.
 //!
 //! ```
-//! use xharness_model_catalog::{bundled, Protocol};
+//! use reasonmap::{bundled, Protocol};
 //! let catalog = bundled().expect("valid bundled data");
 //! let model = catalog.resolve("https://api.deepseek.com", Protocol::ChatCompletions,
 //!                             "deepseek-flash").expect("documented route");

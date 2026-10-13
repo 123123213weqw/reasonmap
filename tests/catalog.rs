@@ -1,5 +1,5 @@
+use reasonmap::{bundled, Catalog, Protocol, CATALOG_JSON};
 use serde_json::{json, Value};
-use xharness_model_catalog::{bundled, Catalog, Protocol, CATALOG_JSON};
 fn altered(edit: impl FnOnce(&mut Value)) -> String {
     let mut v: Value = serde_json::from_str(CATALOG_JSON).unwrap();
     edit(&mut v);
