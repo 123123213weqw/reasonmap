@@ -9,12 +9,12 @@ proxy, an automatic paid probe, or a tokenizer/model-budget catalog.
 
 ## Use
 
-For this unreleased preview (0.4.0 is not a release claim), use the feature branch below.
-Production consumers should pin its tested commit rather than a movable branch:
+For this unreleased preview (0.4.0 is not a release claim), pin the validated
+source commit below rather than a movable branch:
 
 ```toml
 [dependencies]
-reasonmap = { git = "https://github.com/123123213weqw/reasonmap", branch = "feat/input-modalities-20261018" }
+reasonmap = { git = "https://github.com/123123213weqw/reasonmap", rev = "160ff392ae74af14205ba1dd0c7d0538d4777e97" }
 ```
 
 ```rust
