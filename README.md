@@ -9,11 +9,12 @@ proxy, an automatic paid probe, or a tokenizer/model-budget catalog.
 
 ## Use
 
-Until a crates.io release is published:
+For this unreleased preview (0.4.0 is not a release claim), pin the validated
+source commit below rather than a movable branch:
 
 ```toml
 [dependencies]
-reasonmap = { git = "https://github.com/123123213weqw/reasonmap", tag = "v0.3.0" }
+reasonmap = { git = "https://github.com/123123213weqw/reasonmap", rev = "160ff392ae74af14205ba1dd0c7d0538d4777e97" }
 ```
 
 ```rust
@@ -106,3 +107,23 @@ Local development follows the repository's remote Rust compilation policy.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [LICENSE](LICENSE).
 This GitHub source release is not a crates.io publication.
+
+## Input modalities (0.4)
+
+`found.identity.input_modalities` is separate from `ReasoningProfile`. It records
+input types documented for an exact matched endpoint, model, and protocol.
+An omitted or empty list means **unknown**, not text-only. Accepted values are
+`text`, `image`, `audio`, `video`, and `pdf`; a recorded list must include `text`
+and contain no duplicates. Old snapshots without this field remain readable.
+
+The first image records cover `deepseek-flash`, its documented legacy
+`deepseek-v4-flash-vision-exp` alias, `gpt-5.4`, and `gemini-3.8-flash`.
+See [modality evidence](docs/INPUT-MODALITIES.md) for sources and scope.
+Other IDs remain unknown, even if their names look vision-capable.
+`input_modalities_checked_on` and `input_modalities_sources` provide independent
+modality evidence; recording images does not re-date reasoning observations.
+
+This metadata does not implement media transport or turn on an application's
+image input. Consumers must intersect it with adapter support and explicit
+user configuration. It does not advertise image generation. Audio/video/PDF
+schema values reserve catalog vocabulary, not XHarness implementations.

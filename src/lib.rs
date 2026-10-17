@@ -71,6 +71,17 @@ pub struct ModelIdentity {
     /// Version observed on checked_on. A rolling alias is not a pinned version.
     pub snapshot_version: String,
     pub legacy_alias: bool,
+    /// Input modalities expressible through the matched endpoint's protocol,
+    /// from official documentation. Empty means not recorded (unknown); it is
+    /// never a claim of text-only input. Recording a modality does not enable
+    /// the application to send it.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub input_modalities: Vec<String>,
+    /// Modality evidence has its own date; adding it does not re-date reasoning facts.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub input_modalities_checked_on: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub input_modalities_sources: Vec<String>,
 }
 #[derive(Clone, Debug)]
 pub struct Compatibility {
@@ -112,6 +123,7 @@ impl fmt::Display for CatalogError {
     }
 }
 impl std::error::Error for CatalogError {}
+const INPUT_MODALITIES: [&str; 5] = ["text", "image", "audio", "video", "pdf"];
 impl Catalog {
     /// Parse and validate before using any external snapshot. Does not fetch it.
     pub fn from_json(json: &str) -> Result<Self, CatalogError> {
@@ -220,9 +232,36 @@ impl Catalog {
                         .identities
                         .get(id)
                         .ok_or_else(|| CatalogError("Missing identity".into()))?;
+                    if !identity.input_modalities.is_empty()
+                        && (identity
+                            .input_modalities_checked_on
+                            .as_deref()
+                            .is_none_or(|date| date.trim().is_empty())
+                            || identity.input_modalities_sources.is_empty()
+                            || identity
+                                .input_modalities_sources
+                                .iter()
+                                .any(|source| normalized_endpoint(source).is_none()))
+                    {
+                        return Err(CatalogError(
+                            "Input modalities lack independent documentation provenance".into(),
+                        ));
+                    }
                     if identity.canonical_id.is_empty()
                         || identity.display_name.is_empty()
                         || identity.snapshot_version.is_empty()
+                        || identity.input_modalities.len()
+                            != identity
+                                .input_modalities
+                                .iter()
+                                .collect::<BTreeSet<_>>()
+                                .len()
+                        || identity
+                            .input_modalities
+                            .iter()
+                            .any(|m| !INPUT_MODALITIES.contains(&m.as_str()))
+                        || (!identity.input_modalities.is_empty()
+                            && !identity.input_modalities.iter().any(|m| m == "text"))
                         || !r.models.contains(&identity.canonical_id)
                         || !routes.insert((base, r.api, id))
                     {
