@@ -275,9 +275,90 @@ fn malformed_duplicate_or_unproven_catalog_entries_are_rejected() {
             v["routes"].as_array_mut().unwrap().push(route)
         }),
         altered(|v| v["identities"]["deepseek-flash"]["snapshot_version"] = json!("")),
+        altered(|v| {
+            v["identities"]["deepseek-flash"]["input_modalities"] = json!(["text", "image", "text"])
+        }),
+        altered(|v| v["identities"]["deepseek-flash"]["input_modalities"] = json!(["image"])),
+        altered(|v| {
+            v["identities"]["deepseek-flash"]["input_modalities"] = json!(["text", "hologram"])
+        }),
         altered(|v| v["unexpected"] = json!(true)),
     ] {
         assert!(Catalog::from_json(&input).is_err());
     }
     assert!(Catalog::from_json(&"x".repeat(2 * 1024 * 1024 + 1)).is_err());
+}
+#[test]
+fn snapshots_without_modalities_stay_valid_and_empty_means_unknown() {
+    let legacy = altered(|v| {
+        v["identities"]["deepseek-flash"]
+            .as_object_mut()
+            .unwrap()
+            .remove("input_modalities");
+    });
+    let catalog = Catalog::from_json(&legacy).unwrap();
+    let found = catalog
+        .resolve(
+            "https://api.deepseek.com",
+            Protocol::ChatCompletions,
+            "deepseek-flash",
+        )
+        .unwrap();
+    assert!(found.identity.input_modalities.is_empty());
+}
+
+#[test]
+fn documented_image_inputs_are_separate_from_reasoning_and_exactly_routed() {
+    let catalog = bundled().unwrap();
+    for (base, protocol, model) in [
+        (
+            "https://api.deepseek.com",
+            Protocol::ChatCompletions,
+            "deepseek-flash",
+        ),
+        (
+            "https://api.deepseek.com/v1/",
+            Protocol::Responses,
+            "deepseek-v4-flash-vision-exp",
+        ),
+        (
+            "https://api.openai.com/v1",
+            Protocol::ChatCompletions,
+            "gpt-5.4",
+        ),
+        ("https://api.openai.com/v1", Protocol::Responses, "gpt-5.4"),
+        (
+            "https://generativelanguage.googleapis.com/v1beta/openai",
+            Protocol::ChatCompletions,
+            "gemini-3.8-flash",
+        ),
+    ] {
+        let found = catalog.resolve(base, protocol, model).unwrap();
+        assert_eq!(found.identity.input_modalities, ["text", "image"]);
+        assert!(!found.profile.efforts.is_empty());
+        assert!(found
+            .sources
+            .iter()
+            .any(|s| s.contains("vision") || s.contains("gpt-5.4") || s.contains("/openai")));
+    }
+    assert!(catalog
+        .resolve("https://proxy.test/v1", Protocol::Responses, "gpt-5.4")
+        .is_none());
+    assert!(catalog
+        .resolve(
+            "https://generativelanguage.googleapis.com/v1beta/openai",
+            Protocol::Responses,
+            "gemini-3.8-flash"
+        )
+        .is_none());
+    assert!(catalog
+        .resolve(
+            "https://api.deepseek.com",
+            Protocol::ChatCompletions,
+            "deepseek-v4-pro"
+        )
+        .unwrap()
+        .identity
+        .input_modalities
+        .is_empty());
 }
