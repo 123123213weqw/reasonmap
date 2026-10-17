@@ -336,8 +336,14 @@ fn documented_image_inputs_are_separate_from_reasoning_and_exactly_routed() {
         let found = catalog.resolve(base, protocol, model).unwrap();
         assert_eq!(found.identity.input_modalities, ["text", "image"]);
         assert!(!found.profile.efforts.is_empty());
+        assert_eq!(
+            found.identity.input_modalities_checked_on.as_deref(),
+            Some("2026-10-18")
+        );
+        assert_eq!(found.checked_on, "2026-10-13");
         assert!(found
-            .sources
+            .identity
+            .input_modalities_sources
             .iter()
             .any(|s| s.contains("vision") || s.contains("gpt-5.4") || s.contains("/openai")));
     }
@@ -361,4 +367,22 @@ fn documented_image_inputs_are_separate_from_reasoning_and_exactly_routed() {
         .identity
         .input_modalities
         .is_empty());
+}
+
+#[test]
+fn modality_evidence_is_required_without_relabelling_reasoning_evidence() {
+    for field in ["input_modalities_checked_on", "input_modalities_sources"] {
+        let value = altered(|v| {
+            v["identities"]["deepseek-flash"]
+                .as_object_mut()
+                .unwrap()
+                .remove(field);
+        });
+        assert!(Catalog::from_json(&value).is_err());
+    }
+    let value = altered(|v| {
+        v["identities"]["deepseek-flash"]["input_modalities_sources"] =
+            json!(["http://source.test"]);
+    });
+    assert!(Catalog::from_json(&value).is_err());
 }

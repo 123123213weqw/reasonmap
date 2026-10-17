@@ -1,6 +1,6 @@
 {
   "version": "2026-10-18.1",
-  "checked_on": "2026-10-18",
+  "checked_on": "2026-10-13",
   "profiles": {
     "deepseek-chat": {
       "default_effort": "high",
@@ -1488,8 +1488,7 @@
         "https://api-docs.deepseek.com/guides/thinking_mode/",
         "https://api-docs.deepseek.com/api/list-models/",
         "https://api-docs.deepseek.com/quick_start/pricing",
-        "https://api-docs.deepseek.com/updates/",
-        "https://api-docs.deepseek.com/guides/vision/"
+        "https://api-docs.deepseek.com/updates/"
       ]
     },
     {
@@ -1510,8 +1509,7 @@
         "https://api-docs.deepseek.com/guides/thinking_mode/",
         "https://api-docs.deepseek.com/api/list-models/",
         "https://api-docs.deepseek.com/quick_start/pricing",
-        "https://api-docs.deepseek.com/updates/",
-        "https://api-docs.deepseek.com/guides/vision/"
+        "https://api-docs.deepseek.com/updates/"
       ]
     },
     {
@@ -1735,8 +1733,7 @@
         "https://developers.openai.com/api/reference/resources/chat",
         "https://developers.openai.com/api/reference/resources/responses/methods/create",
         "https://developers.openai.com/api/docs/guides/reasoning",
-        "https://developers.openai.com/api/docs/models",
-        "https://developers.openai.com/api/docs/models/gpt-5.4"
+        "https://developers.openai.com/api/docs/models"
       ]
     },
     {
@@ -1755,8 +1752,7 @@
         "https://developers.openai.com/api/reference/resources/chat",
         "https://developers.openai.com/api/reference/resources/responses/methods/create",
         "https://developers.openai.com/api/docs/guides/reasoning",
-        "https://developers.openai.com/api/docs/models",
-        "https://developers.openai.com/api/docs/models/gpt-5.4"
+        "https://developers.openai.com/api/docs/models"
       ]
     },
     {
@@ -2197,6 +2193,10 @@
       "input_modalities": [
         "text",
         "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://api-docs.deepseek.com/guides/vision/"
       ]
     },
     "deepseek-v4-pro": {
@@ -2219,6 +2219,10 @@
       "input_modalities": [
         "text",
         "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://api-docs.deepseek.com/guides/vision/"
       ]
     },
     "glm-4.7": {
@@ -2319,6 +2323,10 @@
       "input_modalities": [
         "text",
         "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-5.4"
       ]
     },
     "gpt-5.4-mini": {
@@ -2359,6 +2367,10 @@
       "input_modalities": [
         "text",
         "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://ai.google.dev/gemini-api/docs/openai"
       ]
     },
     "gemini-3.6-flash": {

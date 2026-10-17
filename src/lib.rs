@@ -77,6 +77,11 @@ pub struct ModelIdentity {
     /// the application to send it.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub input_modalities: Vec<String>,
+    /// Modality evidence has its own date; adding it does not re-date reasoning facts.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub input_modalities_checked_on: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub input_modalities_sources: Vec<String>,
 }
 #[derive(Clone, Debug)]
 pub struct Compatibility {
@@ -227,6 +232,21 @@ impl Catalog {
                         .identities
                         .get(id)
                         .ok_or_else(|| CatalogError("Missing identity".into()))?;
+                    if !identity.input_modalities.is_empty()
+                        && (identity
+                            .input_modalities_checked_on
+                            .as_deref()
+                            .is_none_or(|date| date.trim().is_empty())
+                            || identity.input_modalities_sources.is_empty()
+                            || identity
+                                .input_modalities_sources
+                                .iter()
+                                .any(|source| normalized_endpoint(source).is_none()))
+                    {
+                        return Err(CatalogError(
+                            "Input modalities lack independent documentation provenance".into(),
+                        ));
+                    }
                     if identity.canonical_id.is_empty()
                         || identity.display_name.is_empty()
                         || identity.snapshot_version.is_empty()

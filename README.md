@@ -120,6 +120,8 @@ The first image records cover `deepseek-flash`, its documented legacy
 `deepseek-v4-flash-vision-exp` alias, `gpt-5.4`, and `gemini-3.8-flash`.
 See [modality evidence](docs/INPUT-MODALITIES.md) for sources and scope.
 Other IDs remain unknown, even if their names look vision-capable.
+`input_modalities_checked_on` and `input_modalities_sources` provide independent
+modality evidence; recording images does not re-date reasoning observations.
 
 This metadata does not implement media transport or turn on an application's
 image input. Consumers must intersect it with adapter support and explicit

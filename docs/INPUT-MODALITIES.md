@@ -19,3 +19,6 @@ route-specific overrides before adding a model whose protocols differ.
 Older identities remain unchanged. Reasoning provenance retains its prior
 meaning; adding a vision documentation URL does not upgrade live test evidence.
 Existing live acceptance artifacts test reasoning with text, not vision.
+
+Modality dates/sources live on the identity, separately from the catalog's
+reasoning checked_on/sources. The reasoning snapshot remains dated 2026-10-13.
