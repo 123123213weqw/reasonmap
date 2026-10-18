@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-13.1",
+  "version": "2026-10-18.1",
   "checked_on": "2026-10-13",
   "profiles": {
     "deepseek-chat": {
@@ -2189,7 +2189,15 @@
       "canonical_id": "deepseek-flash",
       "display_name": "DeepSeek V4.1 Flash",
       "snapshot_version": "DeepSeek-V4.1-Flash",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://api-docs.deepseek.com/guides/vision/"
+      ]
     },
     "deepseek-v4-pro": {
       "canonical_id": "deepseek-v4-pro",
@@ -2207,7 +2215,15 @@
       "canonical_id": "deepseek-flash",
       "display_name": "DeepSeek V4.1 Flash",
       "snapshot_version": "DeepSeek-V4.1-Flash",
-      "legacy_alias": true
+      "legacy_alias": true,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://api-docs.deepseek.com/guides/vision/"
+      ]
     },
     "glm-4.7": {
       "canonical_id": "glm-4.7",
@@ -2303,7 +2319,15 @@
       "canonical_id": "gpt-5.4",
       "display_name": "GPT-5.4",
       "snapshot_version": "gpt-5.4",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-5.4"
+      ]
     },
     "gpt-5.4-mini": {
       "canonical_id": "gpt-5.4-mini",
@@ -2339,7 +2363,15 @@
       "canonical_id": "gemini-3.8-flash",
       "display_name": "Gemini 3.8 Flash",
       "snapshot_version": "gemini-3.8-flash",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://ai.google.dev/gemini-api/docs/openai"
+      ]
     },
     "gemini-3.6-flash": {
       "canonical_id": "gemini-3.6-flash",
