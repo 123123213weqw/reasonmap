@@ -386,3 +386,86 @@ fn modality_evidence_is_required_without_relabelling_reasoning_evidence() {
     });
     assert!(Catalog::from_json(&value).is_err());
 }
+
+#[test]
+fn current_image_models_have_independent_evidence_on_every_cataloged_route() {
+    let catalog = bundled().unwrap();
+    let data: Value = serde_json::from_str(CATALOG_JSON).unwrap();
+    let current = [
+        "deepseek-flash",
+        "gpt-6.1-sol",
+        "gpt-6-astra",
+        "gpt-6-luna",
+        "gemini-3.8-flash",
+        "qwen3.8-max",
+        "qwen3.8-flash",
+        "kimi-k3",
+        "grok-4.7",
+        "claude-fable-5-1",
+        "claude-opus-5-5",
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5",
+    ];
+    for model in current {
+        let mut matches = 0;
+        for route in data["routes"].as_array().unwrap() {
+            if !route["models"].as_array().unwrap().contains(&json!(model)) {
+                continue;
+            }
+            let protocol = serde_json::from_value(route["api"].clone()).unwrap();
+            for base in route["base_urls"].as_array().unwrap() {
+                let found = catalog
+                    .resolve(base.as_str().unwrap(), protocol, model)
+                    .unwrap();
+                assert_eq!(
+                    found.identity.input_modalities,
+                    ["text", "image"],
+                    "{model}"
+                );
+                assert_eq!(
+                    found.identity.input_modalities_checked_on.as_deref(),
+                    Some("2026-10-18")
+                );
+                assert!(
+                    !found.identity.input_modalities_sources.is_empty(),
+                    "{model}"
+                );
+                assert_eq!(found.checked_on, "2026-10-13");
+                assert!(!found.identity.legacy_alias, "{model}");
+                matches += 1;
+            }
+        }
+        assert!(matches > 0, "no route for {model}");
+        for protocol in [Protocol::ChatCompletions, Protocol::Responses] {
+            assert!(catalog
+                .resolve("https://proxy.test/v1", protocol, model)
+                .is_none());
+        }
+    }
+}
+
+#[test]
+fn current_vision_metadata_does_not_invent_anthropic_openai_routes() {
+    let catalog = bundled().unwrap();
+    for model in [
+        "claude-fable-5-1",
+        "claude-opus-5-5",
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5",
+    ] {
+        for protocol in [Protocol::ChatCompletions, Protocol::Responses] {
+            assert!(catalog
+                .resolve("https://api.anthropic.com/v1", protocol, model)
+                .is_none());
+        }
+    }
+    for model in ["gpt-6.2-sol", "qwen3.9-max", "kimi-k4", "grok-5"] {
+        assert!(catalog
+            .resolve(
+                "https://api.openai.com/v1",
+                Protocol::ChatCompletions,
+                model
+            )
+            .is_none());
+    }
+}

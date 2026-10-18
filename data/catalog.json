@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18.1",
+  "version": "2026-10-18.2",
   "checked_on": "2026-10-13",
   "profiles": {
     "deepseek-chat": {
@@ -2277,7 +2277,15 @@
       "canonical_id": "gpt-6-luna",
       "display_name": "GPT-6 Luna",
       "snapshot_version": "gpt-6-luna",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6-luna"
+      ]
     },
     "gpt-5.6-sol": {
       "canonical_id": "gpt-5.6-sol",
@@ -2301,13 +2309,29 @@
       "canonical_id": "gpt-6.1-sol",
       "display_name": "GPT-6.1 Sol",
       "snapshot_version": "gpt-6.1-sol",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      ]
     },
     "gpt-6-astra": {
       "canonical_id": "gpt-6-astra",
       "display_name": "GPT-6 Astra",
       "snapshot_version": "gpt-6-astra",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6-astra"
+      ]
     },
     "gpt-5.5": {
       "canonical_id": "gpt-5.5",
@@ -2419,7 +2443,17 @@
       "canonical_id": "grok-4.7",
       "display_name": "Grok 4.7",
       "snapshot_version": "grok-4.7",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://docs.x.ai/developers/grok-4-7",
+        "https://docs.x.ai/developers/model-capabilities/images/understanding",
+        "https://docs.x.ai/developers/rest-api-reference/inference/chat-completions"
+      ]
     },
     "grok-4.6": {
       "canonical_id": "grok-4.6",
@@ -2437,13 +2471,33 @@
       "canonical_id": "qwen3.8-max",
       "display_name": "Qwen3.8-Max",
       "snapshot_version": "qwen3.8-max",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://www.alibabacloud.com/help/en/model-studio/vision-model",
+        "https://help.aliyun.com/zh/model-studio/vision",
+        "https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions"
+      ]
     },
     "qwen3.8-flash": {
       "canonical_id": "qwen3.8-flash",
       "display_name": "Qwen3.8-Flash",
       "snapshot_version": "qwen3.8-flash",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://www.alibabacloud.com/help/en/model-studio/vision-model",
+        "https://help.aliyun.com/zh/model-studio/vision",
+        "https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions"
+      ]
     },
     "qwen3.7-max": {
       "canonical_id": "qwen3.7-max",
@@ -2485,31 +2539,77 @@
       "canonical_id": "kimi-k3",
       "display_name": "Kimi K3",
       "snapshot_version": "kimi-k3",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://platform.kimi.com/docs/models",
+        "https://platform.kimi.com/docs/guide/use-kimi-vision-model",
+        "https://platform.kimi.com/docs/api/responses"
+      ]
     },
     "claude-sonnet-5-5": {
       "canonical_id": "claude-sonnet-5-5",
       "display_name": "Claude Sonnet 5.5",
       "snapshot_version": "claude-sonnet-5-5",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://platform.claude.com/docs/en/models/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/vision"
+      ]
     },
     "claude-opus-5-5": {
       "canonical_id": "claude-opus-5-5",
       "display_name": "Claude Opus 5.5",
       "snapshot_version": "claude-opus-5-5",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://platform.claude.com/docs/en/models/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/vision"
+      ]
     },
     "claude-haiku-5-5": {
       "canonical_id": "claude-haiku-5-5",
       "display_name": "Claude Haiku 5.5",
       "snapshot_version": "claude-haiku-5-5",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://platform.claude.com/docs/en/models/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/vision"
+      ]
     },
     "claude-fable-5-1": {
       "canonical_id": "claude-fable-5-1",
       "display_name": "Claude Fable 5.1",
       "snapshot_version": "claude-fable-5-1",
-      "legacy_alias": false
+      "legacy_alias": false,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "input_modalities_checked_on": "2026-10-18",
+      "input_modalities_sources": [
+        "https://platform.claude.com/docs/en/models/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/vision"
+      ]
     }
   }
 }
