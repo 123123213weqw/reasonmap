@@ -14,7 +14,7 @@ source commit below rather than a movable branch:
 
 ```toml
 [dependencies]
-reasonmap = { git = "https://github.com/123123213weqw/reasonmap", rev = "160ff392ae74af14205ba1dd0c7d0538d4777e97" }
+reasonmap = { git = "https://github.com/123123213weqw/reasonmap", rev = "44159024c3c7a16d175d2cb3a5d665c39fe47d63" }
 ```
 
 ```rust
