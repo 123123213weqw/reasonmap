@@ -116,8 +116,18 @@ An omitted or empty list means **unknown**, not text-only. Accepted values are
 `text`, `image`, `audio`, `video`, and `pdf`; a recorded list must include `text`
 and contain no duplicates. Old snapshots without this field remain readable.
 
-The first image records cover `deepseek-flash`, its documented legacy
-`deepseek-v4-flash-vision-exp` alias, `gpt-5.4`, and `gemini-3.8-flash`.
+Current-line image records cover **13 model IDs** across seven providers:
+`gpt-6.1-sol`, `gpt-6-astra`, `gpt-6-luna`, `deepseek-flash`,
+`gemini-3.8-flash`, `qwen3.8-max`, `qwen3.8-flash`, `kimi-k3`, `grok-4.7`,
+`claude-fable-5-1`, `claude-opus-5-5`, `claude-sonnet-5-5`, and
+`claude-haiku-5-5`. Checked against official documentation on 2026-10-18;
+this is a curated current-line set, not a live model-discovery service.
+The four Claude records apply to native Messages only. Consumers without that
+adapter must not claim runnable Claude support from catalog metadata alone.
+
+`gpt-5.4` and the retired `deepseek-v4-flash-vision-exp` alias retain compatibility
+metadata; they are not counted as current models or recommended test targets.
+`deepseek-flash` is the current rolling Flash ID, not a retired model.
 See [modality evidence](docs/INPUT-MODALITIES.md) for sources and scope.
 Other IDs remain unknown, even if their names look vision-capable.
 `input_modalities_checked_on` and `input_modalities_sources` provide independent
